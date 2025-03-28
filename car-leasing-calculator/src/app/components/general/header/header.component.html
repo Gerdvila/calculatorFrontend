@@ -1,0 +1,13 @@
+<div class="header container">
+  <div class="logo-section">
+  <img  class="tarzanas-logo" src="../../assets/tarzan-lizing-logo.png" alt="logo"/>
+  <h2>{{'header.company_name' | translate}}</h2>
+  </div>
+  <mat-select id="language" [(value)]="selected" (selectionChange)="onChange($event.value)" hideSingleSelectionIndicator>
+    <mat-select-trigger>
+      <img  width="20px" src="../../../../assets/{{selected}}.png">
+    </mat-select-trigger>
+    <mat-option value="united-kingdom"><img width="20px" src="../../../../assets/united-kingdom.png" alt="uk-logo"></mat-option>
+    <mat-option value="lithuania"><img width="20px" src="../../../../assets/lithuania.png" alt="lithuania-logo"></mat-option>
+  </mat-select>
+</div>

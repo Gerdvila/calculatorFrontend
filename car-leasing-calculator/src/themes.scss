@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "palettes" as palettes;
+@use "@angular/material" as mat;
+
+$my-primary: mat.define-palette(palettes.$client-pallete, 500, 300, 900);
+$my-accent: mat.define-palette(palettes.$client-pallete, 500, 200, 900);
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$client-theme: mat.define-light-theme((color: (primary: $my-primary,
+                accent: $my-accent,
+                warn: $my-warn,
+            ),
+            typography: mat.define-typography-config(),
+            density: 0,
+        ));

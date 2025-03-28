@@ -1,0 +1,63 @@
+@use '@angular/material' as mat;
+@use "./themes.scss" as themes;
+@include mat.core();
+
+@include mat.all-component-themes(themes.$client-theme);
+
+$cards-color: #ffffff;
+$text-color: #000000;
+$header-color: #023b6d;
+$green: #2ECA6A;
+$background: #f6f9ff;
+$font: 'Poppins', sans-serif;
+
+.mat-step-header {
+    pointer-events: none !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// mat-step-header car-lease form number background color, when not selected
+html body.mat-typography app-root app-registration-page div.main_div mat-stepper.mat-stepper-horizontal.mat-stepper-label-position-end.ng-tns-c3820311392-0 div.mat-horizontal-stepper-wrapper div.mat-horizontal-stepper-header-container mat-step-header#cdk-step-label-0-1.mat-step-header.mat-horizontal-stepper-header.mat-primary div.mat-step-icon.mat-step-icon-state-number {
+    background-color: #9b766762 !important;
+}
+
+// mat-step-header car-lease form number background color, when selected
+html body.mat-typography app-root app-registration-page div.main_div mat-stepper.mat-stepper-horizontal.mat-stepper-label-position-end.ng-tns-c3820311392-0 div.mat-horizontal-stepper-wrapper div.mat-horizontal-stepper-header-container mat-step-header#cdk-step-label-0-1.mat-step-header.mat-horizontal-stepper-header.mat-primary div.mat-step-icon.mat-step-icon-state-number.mat-step-icon-selected {
+    background-color: #d6b4a5 !important;
+}
+
+// mat step-header both steps' labels
+.mat-step-label {
+    color: white !important;
+}
+
+// unchecked checkbox
+.mdc-checkbox__background {
+    border-color: #bc8c7985 !important;
+    background-color: #f3e9e445 !important;
+}
+
+// checked checknox
+.mat-mdc-checkbox-checked .mdc-checkbox__background {
+    background-color: #d6b4a5 !important;
+    border-color: #d6b4a5 !important;
+}

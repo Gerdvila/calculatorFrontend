@@ -1,0 +1,180 @@
+<div class="container">
+  <div class="carLeasingForm">
+    <form [formGroup]="carLeasingForm" (ngSubmit)="onSubmit()">
+      <div class="mainContainer">
+        <div class="leftColumn">
+          <mat-form-field>
+            <mat-label>{{
+              "car-leasing-form.car-make.title" | translate
+            }}</mat-label>
+            <mat-hint>{{
+              "car-leasing-form.car-make.hint" | translate
+            }}</mat-hint>
+            <mat-select formControlName="make">
+              @for (carMake of carMakes$ | async; track $index) {
+              <mat-option [value]="carMake">{{ carMake }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label for="model">{{
+              "car-leasing-form.car-model.title" | translate
+            }}</mat-label>
+            <mat-hint>{{
+              "car-leasing-form.car-model.hint" | translate
+            }}</mat-hint>
+            <mat-select
+              formControlName="model"
+              (selectionChange)="onSelectModel()"
+            >
+              @for (model of (carModels$ | async); track $index) {
+              <mat-option [value]="model.name">{{ model.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label for="modelVariant">{{
+              "car-leasing-form.model-variant.title" | translate
+            }}</mat-label>
+            <mat-hint>{{
+              "car-leasing-form.model-variant.hint" | translate
+            }}</mat-hint>
+            <mat-select
+              formControlName="modelVariant"
+              (selectionChange)="onSelectModelVariant()"
+            >
+              @for (variant of carModelVariants$ | async; track $index) {
+              <mat-option [value]="variant.name">{{ variant.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label for="year">{{
+              "car-leasing-form.year.title" | translate
+            }}</mat-label>
+            <mat-hint>{{ "car-leasing-form.year.hint" | translate }}</mat-hint>
+            <mat-select formControlName="year">
+              @for (year of (carDetails$ | async)?.years; track $index) {
+              <mat-option [value]="year">{{ year }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="rightColumn">
+          <mat-form-field>
+            <mat-label for="fuelType">{{
+              "car-leasing-form.fuel-type.title" | translate
+            }}</mat-label>
+            <mat-hint>{{
+              "car-leasing-form.fuel-type.hint" | translate
+            }}</mat-hint>
+            <mat-select formControlName="fuelType">
+              @for (fuelType of (carDetails$ | async)?.fuelTypes; track $index)
+              {
+              <mat-option [value]="fuelType">
+                @if (fuelType.trim() == 'diesel'){
+                {{ "car-leasing-form.fuel-type.diesel" | translate }}
+                } @if (fuelType.trim() == 'gas'){
+                {{ "car-leasing-form.fuel-type.petrol" | translate }}
+                } @if (fuelType.trim() == 'electric'){
+                {{ "car-leasing-form.fuel-type.electric" | translate }}
+                } @if (fuelType.trim() == 'hybrid'){
+                {{ "car-leasing-form.fuel-type.hybrid" | translate }}
+                } @if (fuelType.trim() == 'other'){
+                {{ "car-leasing-form.fuel-type.other" | translate }}
+                }
+              </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label for="enginePower">{{
+              "car-leasing-form.engine-power.title" | translate
+            }}</mat-label>
+            <mat-hint>{{
+              "car-leasing-form.engine-power.hint" | translate
+            }}</mat-hint>
+            <mat-select formControlName="enginePower">
+              @for (enginePower of (carDetails$ | async)?.enginePowers; track
+              $index) {
+              <mat-option [value]="enginePower">{{ enginePower }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label for="engineSize">{{
+              "car-leasing-form.engine-size.title" | translate
+            }}</mat-label>
+            <mat-hint>{{
+              "car-leasing-form.engine-size.hint" | translate
+            }}</mat-hint>
+            <mat-select formControlName="engineSize">
+              @for (engineSize of (carDetails$ | async)?.engineSizes; track
+              $index) {
+              <mat-option [value]="engineSize">{{ engineSize }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label for="url">{{
+              "car-leasing-form.url.title" | translate
+            }}</mat-label>
+            <mat-hint>{{ "car-leasing-form.url.hint" | translate }}</mat-hint>
+            <input matInput type="url" id="url" formControlName="url" />
+          </mat-form-field>
+
+          <button type="button" mat-raised-button (click)="fileInput.click()">
+            {{ "car-leasing-form.upload-file.title" | translate }}
+          </button>
+          <mat-hint>{{
+            "car-leasing-form.upload-file.hint" | translate
+          }}</mat-hint>
+          <input
+            hidden
+            (change)="onFileSelected($event)"
+            #fileInput
+            type="file"
+            accept="application/pdf"
+          />
+          <span class="file-name">{{ selectedFile?.name }}</span>
+          @if(!correctFile){
+          <div class="error">
+            {{ "car-leasing-form.upload-file.validation1" | translate }}
+          </div>
+          } @if(!correctFileSize){
+          <div class="error">
+            {{ "car-leasing-form.upload-file.validation2" | translate }}
+          </div>
+          }
+        </div>
+      </div>
+      <div class="bottomContainer">
+        <mat-checkbox formControlName="confirmation">
+          <label>{{
+            "car-leasing-form.confirmations.confirmation1" | translate
+          }}</label>
+        </mat-checkbox>
+        <mat-checkbox formControlName="terms">
+          <label>{{
+            "car-leasing-form.confirmations.confirmation2" | translate
+          }}</label>
+        </mat-checkbox>
+        <button
+          class="submitButton"
+          mat-raised-button
+          [color]="getButtonColor()"
+          type="submit"
+          [disabled]="!carLeasingForm.valid"
+        >
+          {{ "car-leasing-form.submit-button" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

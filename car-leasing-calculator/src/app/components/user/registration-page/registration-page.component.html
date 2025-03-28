@@ -1,0 +1,17 @@
+<app-header />
+<div class="main_div">
+  <mat-stepper orientation="horizontal" linear>
+    <mat-step class="step-header" [editable]="false" label="{{'registration-page.step1' | translate}}">
+      <div class="left">
+        <app-personal-information-form />
+      </div>
+    </mat-step>
+    <mat-step class="step-header" label="{{'registration-page.step2' | translate}}">
+      <div class="right">
+        <app-car-leasing-form>
+        </app-car-leasing-form>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+<app-footer />

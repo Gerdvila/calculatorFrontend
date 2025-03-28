@@ -1,0 +1,163 @@
+<form [formGroup]="personalInformationForm" (ngSubmit)="onSubmit()">
+  <div class="mainContainer">
+    <div class="leftRow">
+      <mat-form-field>
+        <mat-label>{{ 'personal-information-form.first-name.title' | translate }}</mat-label>
+        <mat-hint>{{ 'personal-information-form.first-name.hint' | translate }}</mat-hint>
+        <input
+          required
+          matInput
+          type="text"
+          id="firstName"
+          formControlName="firstName"
+          placeholder="{{ 'personal-information-form.first-name.placeholder' | translate }}"
+      /></mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'personal-information-form.last-name.title' | translate }}</mat-label>
+        <mat-hint>{{ 'personal-information-form.first-name.hint' | translate }}</mat-hint>
+        <input
+          required
+          matInput
+          type="text"
+          id="secondName"
+          formControlName="secondName"
+          placeholder="{{ 'personal-information-form.last-name.placeholder' | translate }}"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'personal-information-form.email-address.title' | translate }}</mat-label>
+        <mat-hint>{{  'personal-information-form.email-address.hint' | translate  }} </mat-hint>
+        <input
+          required
+          matInput
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="{{ 'personal-information-form.email-address.placeholder' | translate }}"
+      /></mat-form-field>
+      <mat-form-field>
+        <mat-hint>{{ 'personal-information-form.phone-number.hint' | translate }}</mat-hint>
+        <mat-label>{{  'personal-information-form.phone-number.title' | translate  }}</mat-label>
+
+        <input
+          required
+          matInput
+          type="tel"
+          id="phone"
+          formControlName="phone"
+          placeholder="{{ 'personal-information-form.phone-number.placeholder' | translate }}"
+      /></mat-form-field>
+    </div>
+    <div class="rightRow">
+      <mat-form-field>
+        <mat-label>{{'personal-information-form.personal-id.title' | translate }}</mat-label>
+        <mat-hint>{{'personal-information-form.personal-id.hint' | translate }}</mat-hint>
+        <input
+          required
+          matInput
+          type="text"
+          id="pid"
+          formControlName="pid"
+          placeholder="{{'personal-information-form.personal-id.placeholder' | translate }}"
+      /></mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{'personal-information-form.date-of-birth.title' | translate }}</mat-label>
+        <mat-hint>{{'personal-information-form.date-of-birth.hint' | translate }}</mat-hint>
+        <input
+          required
+          matInput
+          id="date"
+          formControlName="date"
+          [matDatepicker]="picker"
+        />
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{'personal-information-form.marital-status.title' | translate }}</mat-label>
+        <mat-hint>{{'personal-information-form.marital-status.hint' | translate }}</mat-hint>
+        <mat-select required id="maritalStatus" formControlName="maritalStatus">
+          <mat-option value="Single">{{'personal-information-form.marital-status.options.option1' | translate }}</mat-option>
+          <mat-option value="Married">{{'personal-information-form.marital-status.options.option2' | translate }}</mat-option>
+          <mat-option value="Partnership">{{'personal-information-form.marital-status.options.option3' | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{'personal-information-form.number-of-children.title' | translate }}</mat-label>
+        <mat-hint>{{'personal-information-form.number-of-children.hint' | translate }}</mat-hint>
+        <input
+          required
+          matInput
+          type="text"
+          id="childrenCount"
+          formControlName="childrenCount"
+          placeholder="{{'personal-information-form.number-of-children.placeholder' | translate }}"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-form-field required class="bottom">
+    <mat-label>{{'personal-information-form.citizenship.title' | translate }}</mat-label>
+    <mat-hint>{{'personal-information-form.citizenship.hint' | translate }}</mat-hint>
+    <mat-select
+      id="citizenship"
+      formControlName="citizenship"
+      matNativeControl
+      required
+    >
+      <mat-option value="Austria">{{'personal-information-form.citizenship.options.option1' | translate }}</mat-option>
+      <mat-option value="Belgium">{{'personal-information-form.citizenship.options.option2' | translate }}</mat-option>
+      <mat-option value="Bulgaria">{{'personal-information-form.citizenship.options.option3' | translate }}</mat-option>
+      <mat-option value="Croatia">{{'personal-information-form.citizenship.options.option4' | translate }}</mat-option>
+      <mat-option value="Cyprus">{{'personal-information-form.citizenship.options.option5' | translate }}</mat-option>
+      <mat-option value="Czech Republic">{{'personal-information-form.citizenship.options.option6' | translate }}</mat-option>
+      <mat-option value="Denmark">{{'personal-information-form.citizenship.options.option7' | translate }}</mat-option>
+      <mat-option value="Estonia">{{'personal-information-form.citizenship.options.option8' | translate }}</mat-option>
+      <mat-option value="Finland">{{'personal-information-form.citizenship.options.option9' | translate }}</mat-option>
+      <mat-option value="France">{{'personal-information-form.citizenship.options.option10' | translate }}</mat-option>
+      <mat-option value="Germany">{{'personal-information-form.citizenship.options.option11' | translate }}</mat-option>
+      <mat-option value="Greece">{{'personal-information-form.citizenship.options.option12' | translate }}</mat-option>
+      <mat-option value="Hungary">{{'personal-information-form.citizenship.options.option13' | translate }}</mat-option>
+      <mat-option value="Ireland">{{'personal-information-form.citizenship.options.option14' | translate }}</mat-option>
+      <mat-option value="Latvia">{{'personal-information-form.citizenship.options.option16' | translate }}</mat-option>
+      <mat-option value="Lithuania">{{'personal-information-form.citizenship.options.option17' | translate }}</mat-option>
+      <mat-option value="Luxembourg">{{'personal-information-form.citizenship.options.option18' | translate }}</mat-option>
+      <mat-option value="Malta">{{'personal-information-form.citizenship.options.option19' | translate }}</mat-option>
+      <mat-option value="Netherlands">{{'personal-information-form.citizenship.options.option20' | translate }}</mat-option>
+      <mat-option value="Poland">{{'personal-information-form.citizenship.options.option21' | translate }}</mat-option>
+      <mat-option value="Portugal">{{'personal-information-form.citizenship.options.option22' | translate }}</mat-option>
+      <mat-option value="Romania">{{'personal-information-form.citizenship.options.option23' | translate }}</mat-option>
+      <mat-option value="Slovakia">{{'personal-information-form.citizenship.options.option24' | translate }}</mat-option>
+      <mat-option value="Slovenia">{{'personal-information-form.citizenship.options.option25' | translate }}</mat-option>
+      <mat-option value="Spain">{{'personal-information-form.citizenship.options.option26' | translate }}</mat-option>
+      <mat-option value="Sweden">{{'personal-information-form.citizenship.options.option27' | translate }}</mat-option>
+      <mat-option value="Other">{{'personal-information-form.citizenship.options.option28' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="bottom"
+    ><mat-label>{{ 'personal-information-form.monthly-income' | translate }}</mat-label>
+    <input
+      required
+      matInput
+      id="montlyIncome"
+      formControlName="montlyIncome"
+      type="text"
+      placeholder="{{ 'personal-information-form.monthly-income' | translate }}"
+    />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    matStepperNext
+    [disabled]="!personalInformationForm.valid"
+    (click)="onSubmit()"
+  >
+    {{ 'personal-information-form.next-button' | translate }}
+  </button>
+</form>

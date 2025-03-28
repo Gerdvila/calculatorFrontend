@@ -1,0 +1,74 @@
+<div>
+    <h2>{{ 'car-leasing-calculator.title' | translate }} </h2>
+    <form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>{{'car-leasing-calculator.car-value.title' | translate}}</mat-label>
+            <input matInput type="text" id="carValue" required min placeholder="EUR" formControlName="carValue">
+        </mat-form-field>
+        @if(carValue?.invalid && carValue?.touched){
+            <div class="error">{{'car-leasing-calculator.car-value.validation' | translate}}</div>
+        }
+
+        <mat-form-field>
+            <mat-label>{{'car-leasing-calculator.period' | translate}}</mat-label>
+            <mat-select name="period" id="period" formControlName="period" required>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+                <mat-option value="6">6</mat-option>
+                <mat-option value="12">12</mat-option>
+                <mat-option value="18">18</mat-option>
+                <mat-option value="24">24</mat-option>
+                <mat-option value="36">36</mat-option>
+                <mat-option value="48">48</mat-option>
+                <mat-option value="60">60</mat-option>
+            </mat-select>
+        </mat-form-field>
+        @if(period?.invalid && period?.touched){
+            <div class="error">{{'car-leasing-calculator.period-months.validation' | translate }}</div>
+        }
+
+        <mat-form-field>
+            <mat-label>{{'car-leasing-calculator.down-payment.title' | translate }}<sup><span class="material-symbols-outlined" matTooltip="{{'car-leasing-calculator.down-payment.active-validation' | translate }}">help</span></sup></mat-label>
+            <input matInput type="text" id="downpayment" placeholder="EUR" formControlName="downPayment" min required>
+        </mat-form-field>
+        @if(downPayment?.invalid && downPayment?.touched){
+            <div class="error">{{'car-leasing-calculator.down-payment.validation' | translate }}</div>
+        }
+        <mat-form-field>
+            <mat-label>{{'car-leasing-calculator.residual-value.title' | translate }}</mat-label>
+            <mat-select name="residual" id="residual" formControlName="residualValuePercentage" required>
+                <mat-option value="0">0%</mat-option>
+                <mat-option value="5">5%</mat-option>
+                <mat-option value="10">10%</mat-option>
+                <mat-option value="15">15%</mat-option>
+                <mat-option value="20">20%</mat-option>
+                <mat-option value="25">25%</mat-option>
+                <mat-option value="30">30%</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="form-row">
+            <mat-label>{{'car-leasing-calculator.environmentally-friendly.title' | translate }}</mat-label>
+            <mat-slide-toggle formControlName="isEcoFriendly" (change)="calculateMonthlyPayment()"></mat-slide-toggle>
+        </div>
+
+        <div class="form-row">
+            <mat-form-field subscriptSizing="dynamic" floatLabel="always">
+                <mat-label>{{'car-leasing-calculator.monthly-payment.title' | translate }}:</mat-label>
+                @if(monthlyPayment$ | async; as monthlyPayment){
+                    @if(monthlyPayment.monthlyPayment < 0){
+                        <input matInput value="{{'car-leasing-calculator.monthly-payment.validation-incorrect-data' | translate}}" type="text" id="monthlyPayment" disabled />
+                    }
+                    @else {
+                        <input matInput value="{{monthlyPayment.monthlyPayment.toFixed(2)}}" type="text" id="monthlyPayment" disabled />
+                    }
+                }
+                @else {
+                    <input matInput value="" type="text" id="monthlyPayment" disabled />
+                }
+            </mat-form-field>
+        </div>
+        <button type="submit" mat-raised-button color="primary" [disabled]="calculatorForm.invalid">{{ 'car-leasing-calculator.apply-button' | translate}}</button>
+    </form>
+</div>

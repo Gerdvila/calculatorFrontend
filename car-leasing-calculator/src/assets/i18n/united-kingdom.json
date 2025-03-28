@@ -1,0 +1,191 @@
+{
+  "header": {
+    "company_name": "Car leasing"
+  },
+  "how-it-works": {
+    "title_bold": "The fastest way to drive your dream car!",
+    "steps": {
+      "step1": "1. Fill out the form. It includes details about vehicle as well as your personal information.",
+      "step2": "2. Submit the form and make sure to check your email from time to time - we don‘t take long to reply.",
+      "step3": "3. Carefully study our leasing offer and - if all information is correct - sign the agreement.",
+      "step4": "4. Get ready to live the dream - requested money will be transferred to your account shortly."
+    },
+    "apply-for-loan-button": "Calculate payment"
+  },
+  "footer": {
+    "copyright": "Copyright"
+  },
+  "car-leasing-calculator": {
+    "title": "Car leasing calculator",
+    "car-value": {
+      "title": "Car value",
+      "validation": "Car value has to be at least 300 EUR"
+    },
+    "period": "Period (months)",
+    "period-months": {
+      "validation": "Please choose a lease period"
+    },
+    "down-payment": {
+      "title": "Down payment",
+      "validation": "Down payment has to be at least 0 eur",
+      "active-validation": "If less than 10% of vehicle value, applications are often rejected"
+    },
+    "residual-value": {
+      "title": "Residual value"
+    },
+    "environmentally-friendly": {
+      "title": "Environmentally friendly car"
+    },
+    "monthly-payment": {
+      "title": "Monthly payment from",
+      "validation-incorrect-data": "Incorrect data"
+    },
+    "apply-button": "Next"
+  },
+  "personal-information-form": {
+    "first-name": {
+      "title": "First name",
+      "hint": "only letter and “-”",
+      "placeholder": "First name"
+    },
+    "last-name": {
+      "title": "Last name",
+      "hint": "only letter and “-”",
+      "placeholder": "Last name"
+    },
+    "email-address": {
+      "title": "Email address",
+      "hint": "test@test.com",
+      "placeholder": "Email"
+    },
+    "phone-number": {
+      "title": "Phone number",
+      "hint": "+37060999666",
+      "placeholder": "Phone no."
+    },
+    "personal-id": {
+      "title": "Personal ID number",
+      "hint": "just letters and numbers",
+      "placeholder": "Personal ID"
+    },
+    "date-of-birth": {
+      "title": "Date of birth",
+      "hint": "you must be at least 18 years old"
+    },
+    "marital-status": {
+      "title": "Marital status",
+      "hint": "select from the dropdown list",
+      "options": {
+        "option1": "Single",
+        "option2": "Married",
+        "option3": "Partnership"
+      }
+    },
+    "number-of-children": {
+      "title": "Number of children",
+      "hint": "enter an integer >= 0",
+      "placeholder": "Number of children"
+    },
+    "citizenship": {
+      "title": "Citizenship",
+      "hint": "select an EU country from dropdown list",
+      "options": {
+        "option1": "Austria",
+        "option2": "Belgium",
+        "option3": "Bulgaria",
+        "option4": "Croatia",
+        "option5": "Cyprus",
+        "option6": "Czech Republic",
+        "option7": "Denmark",
+        "option8": "Estonia",
+        "option9": "Finland",
+        "option10": "France",
+        "option11": "Germany",
+        "option12": "Greece",
+        "option13": "Hungary",
+        "option14": "Ireland",
+        "option15": "Italy",
+        "option16": "Latvia",
+        "option17": "Lithuania",
+        "option18": "Luxembourg",
+        "option19": "Malta",
+        "option20": "Netherlands",
+        "option21": "Poland",
+        "option22": "Portugal",
+        "option23": "Romania",
+        "option24": "Slovakia",
+        "option25": "Slovenia",
+        "option26": "Spain",
+        "option27": "Sweden",
+        "option28": "Other"
+      }
+    },
+    "monthly-income": "Monthly income after taxes and commitments",
+    "next-button": "Next"
+  },
+  "registration-page": {
+    "step1": "Personal data",
+    "step2": "Car data"
+  },
+  "car-leasing-form": {
+    "car-make": {
+      "title": "Make",
+      "hint": "select car make"
+    },
+    "car-model": {
+      "title": "Model",
+      "hint": "select make for options"
+    },
+    "model-variant": {
+      "title": "Model variant(optional)",
+      "hint": "select model for options"
+    },
+    "year": {
+      "title": "Year of manufacture",
+      "hint": "select model or variant for options"
+    },
+    "fuel-type": {
+      "title": "Fuel type",
+      "diesel": "Diesel",
+      "petrol": "Petrol",
+      "electric": "Electric",
+      "hybrid": "Hybrid",
+      "other": "Other",
+      "hint": "select model or variant for options"
+    },
+    "engine-power": {
+      "title": "Engine power (hp)",
+      "hint": "Select model or variant for options"
+    },
+    "engine-size": {
+      "title": "Engine size (liters)",
+      "hint": "select model or variant for options"
+    },
+    "url": {
+      "title": "URL (optional)",
+      "hint": "paste car offer URL here"
+    },
+    "upload-file": {
+      "title": "Upload file",
+      "hint": "Optional",
+      "validation1": "Only PDF files are allowed!",
+      "validation2": "Max file size is 3MB"
+    },
+    "confirmations": {
+      "confirmation1": "I confirm that the above information is accurate",
+      "confirmation2": "I have read and agree with the Terms and Conditions"
+    },
+    "submit-button": "Apply for a loan."
+  },
+  "page-not-found": {
+    "title": "404",
+    "message": "The page you are looking for doesn't exist.",
+    "back-button": "Back to Home"
+  },
+  "form-submission-confirmation": {
+    "title": "Thank you!",
+    "message": "Your application was submitted successfully.",
+    "message2": "We will contact you regarding your dream car shortly.",
+    "back-button": "Close"
+  }
+}

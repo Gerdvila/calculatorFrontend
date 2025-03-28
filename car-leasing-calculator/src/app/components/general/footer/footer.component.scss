@@ -1,0 +1,28 @@
+:host {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+.copyright {
+  padding-left: 10px;
+  text-align: center;
+}
+
+.tarzanas-logo {
+  width: 57px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

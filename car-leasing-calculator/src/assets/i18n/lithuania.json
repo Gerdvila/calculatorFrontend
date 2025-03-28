@@ -1,0 +1,191 @@
+{
+  "header": {
+    "company_name": "Automobilių lizingas"
+  },
+  "how-it-works": {
+    "title_bold": "Vairuok svajonių automobilį jau šiandien!",
+    "steps": {
+      "step1": "1. Užpildykite paraišką internetu. Tai užtruks tik 5 minutes.",
+      "step2": "2. Pateikite paraišką ir nepamirškite patikrinti savo el. pašto dėžutės - Mes atrašome greit.",
+      "step3": "3. Prieš pasirašant sutartį atidžiai peržiūrėkite pasiūlymą ir tik tada pasirašykite.",
+      "step4": "4. Pasiruoškite svajonės išsipildymui, nes Jūsų automobilis jau pakeliui."
+    },
+    "apply-for-loan-button": "Pradėti"
+  },
+  "footer": {
+    "copyright": "Autorinės teisės priklauso"
+  },
+  "car-leasing-calculator": {
+    "title": "Automobilių lizingo skaičiuoklė",
+    "car-value": {
+      "title": "Automobilio vertė",
+      "validation": "Automobilio vertė turi siekti bent 300 EUR"
+    },
+    "period": "Laikotarpis (mėn.)",
+    "period-months": {
+      "validation": "Prašau pasirinkite lizingo laikotarpį"
+    },
+    "down-payment": {
+      "title": "Pradinis įnašas",
+      "validation": "Pradinis įnašas turi būti didesnis nei 0 EUR",
+      "active-validation": "Lizingo prašymai, kurių pradinis įnašas mažesnis nei 10% automiblio vertės, dažnai atmetami."
+    },
+    "residual-value": {
+      "title": "Likutinė vertė"
+    },
+    "environmentally-friendly": {
+      "title": "Aplinką tausojantis automobilis"
+    },
+    "monthly-payment": {
+      "title": "Mėnesinė įmoka nuo",
+      "validation-incorrect-data": "Neteisingi duomenys"
+    },
+    "apply-button": "Toliau"
+  },
+  "personal-information-form": {
+    "first-name": {
+      "title": "Vardas",
+      "hint": "Tik raidės ir „-“",
+      "placeholder": "Vardas"
+    },
+    "last-name": {
+      "title": "Pavardė",
+      "hint": "Tik raidės ir „-“",
+      "placeholder": "Pavardė"
+    },
+    "email-address": {
+      "title": "El. paštas",
+      "hint": "testas@test.com",
+      "placeholder": "El. paštas"
+    },
+    "phone-number": {
+      "title": "Telefono numeris",
+      "hint": "+37060999666",
+      "placeholder": "Tel nr."
+    },
+    "personal-id": {
+      "title": "Asmens kodas",
+      "hint": "Tiek raidės, tiek skaičiai",
+      "placeholder": "Asmens kodas"
+    },
+    "date-of-birth": {
+      "title": "Gimimo data",
+      "hint": "Turi būti ne jaunesnis nei 18 metų"
+    },
+    "marital-status": {
+      "title": "Šeimyninė padėtis",
+      "hint": "Pasirinkite iš sąrašo",
+      "options": {
+        "option1": "Nevedęs(-usi)",
+        "option2": "Vedęs(-usi)",
+        "option3": "Partnerystė"
+      }
+    },
+    "number-of-children": {
+      "title": "Vaikų skaičius",
+      "hint": "Įveskite sveiką skaičių ≥ 0",
+      "placeholder": "Vaikų skaičius"
+    },
+    "citizenship": {
+      "title": "Pilietybė",
+      "hint": "Pasirinkite ES šalį iš sąrašo",
+      "options": {
+        "option1": "Austrija",
+        "option2": "Belgija",
+        "option3": "Bulgarija",
+        "option4": "Kroatija",
+        "option5": "Kipras",
+        "option6": "Čekija",
+        "option7": "Danija",
+        "option8": "Estija",
+        "option9": "Suomija",
+        "option10": "Prancūzija",
+        "option11": "Vokietija",
+        "option12": "Graikija",
+        "option13": "Vengrija",
+        "option14": "Airija",
+        "option15": "Italija",
+        "option16": "Latvija",
+        "option17": "Lietuva",
+        "option18": "Liuksemburgas",
+        "option19": "Malta",
+        "option20": "Nyderlandai",
+        "option21": "Lenkija",
+        "option22": "Portugalija",
+        "option23": "Rumunija",
+        "option24": "Slovakija",
+        "option25": "Slovėnija",
+        "option26": "Ispanija",
+        "option27": "Švedija",
+        "option28": "Kita"
+      }
+    },
+    "monthly-income": "Mėnesinės pajamos po mokesčių ir įsipareigojimų",
+    "next-button": "Toliau"
+  },
+  "registration-page": {
+    "step1": "Pareiškėjas",
+    "step2": "Automobilis"
+  },
+  "car-leasing-form": {
+    "car-make": {
+      "title": "Markė",
+      "hint": "Pasirinkite iš sąrašo"
+    },
+    "car-model": {
+      "title": "Modelis",
+      "hint": "Pasirinkite iš sąrašo"
+    },
+    "model-variant": {
+      "title": "Modelio variantas",
+      "hint": "Pasirinkite iš sąrašo"
+    },
+    "year": {
+      "title": "Metai",
+      "hint": "Pasirinkite iš sąrašo"
+    },
+    "fuel-type": {
+      "title": "Kuro tipas",
+      "diesel": "Dyzelis",
+      "petrol": "Benzinas",
+      "electric": "Elektra varomas",
+      "hybrid": "Hibridas",
+      "other": "Other",
+      "hint": "Pasirinkite iš sąrašo"
+    },
+    "engine-power": {
+      "title": "Variklio galingumas(HP)",
+      "hint": "Pasirinkite iš sąrašo"
+    },
+    "engine-size": {
+      "title": "Variklio tūris",
+      "hint": "Pasirinkite iš sąrašo"
+    },
+    "url": {
+      "title": "Nuoroda",
+      "hint": "neprivaloma"
+    },
+    "upload-file": {
+      "title": "Prisegti",
+      "hint": "neprivaloma",
+      "validation1": "Galima prisegti tik PDF failus",
+      "validation2": "Failo dydis negali viršyti 3MB"
+    },
+    "confirmations": {
+      "confirmation1": "Patvirtinu, kad informacija yra teisinga",
+      "confirmation2": "Sutinku su privatumo politika"
+    },
+    "submit-button": "Pateikti"
+  },
+  "page-not-found": {
+    "title": "404",
+    "message": "Puslapis nerastas",
+    "back-button": "Grįžti į pradinį puslapį"
+  },
+  "form-submission-confirmation": {
+    "title": "Ačiū!",
+    "message": "Jūsų paraiška sėkmingai pateikta.",
+    "message2": "Mūsų specialistas greitu metu susisieks su Jumis.",
+    "back-button": "Uždaryti"
+  }
+}

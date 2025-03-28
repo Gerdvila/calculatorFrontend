@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  margin: 0;
+  margin-left: 20px;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.tarzanas-logo {
+  width: 57px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+mat-select {
+  background-color: white;
+  border: 1px solid #dedede;
+  border-radius: 20px;
+  padding: 5px 10px;
+  height: 33px;
+  width: 60px;
+}
+
+span.mdc-list-item__primary-text {
+  margin: 0;
+}

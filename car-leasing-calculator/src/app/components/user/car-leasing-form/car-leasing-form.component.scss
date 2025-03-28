@@ -1,0 +1,115 @@
+.container {
+  .carLeasingForm {
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgba($color: #000000, $alpha: 0.4);
+      border-radius: 10px;
+      color: white;
+      position: relative;
+      padding: 20px 20px;
+      margin: 0 auto 50px;
+
+      .error {
+        color: #f44336;
+        margin: 0 auto 25px;
+        max-width: 212px;
+    }
+
+
+      .mainContainer {
+        display: flex;
+        justify-content: space-between;
+
+        .leftColumn,
+        .rightColumn {
+          display: flex;
+          flex-direction: column;
+          width: 47%;
+        }
+      }
+
+      .bottomContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      select {
+        color: #999;
+        width: 100%;
+        margin-bottom: 15px;
+
+        option {
+          color: black;
+        }
+      }
+
+      .submitButton {
+        width: 170px;
+        margin: 10px auto 0;
+        border-radius: 20px;
+      }
+
+      button.submitButton:disabled {
+        border-radius: 20px;
+        background-color: rgba($color: #adadad, $alpha: 0.7);
+      }
+
+      ::placeholder,
+      .mat-form-field-label,
+      mat-hint {
+        font-size: 0.7em;
+      }
+
+      mat-hint {
+        color: rgb(171, 171, 171);
+        margin-top: -5px;
+      }
+
+      mat-checkbox label {
+        color: white;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .container {
+    .carLeasingForm {
+      form {
+        .mainContainer {
+          flex-direction: column;
+
+          .leftColumn,
+          .rightColumn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .bottomContainer {
+    mat-checkbox {
+      label {
+        display: inline-block;
+        font-size: 13px;
+        text-align: left;
+        color: white;
+        position: relative;
+      }
+    }
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  mat-form-field mat-label {
+    font-size: 14px;
+  }
+}
