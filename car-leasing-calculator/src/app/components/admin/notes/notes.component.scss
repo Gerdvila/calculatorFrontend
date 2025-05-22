@@ -1,0 +1,57 @@
+@import '../../../../styles.scss';
+
+.main-content {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  height: 36.5vh;
+}
+
+.card-container {
+  max-height: 36.5vh;
+  background-color: $cards-color;
+  border-radius: 0.3rem;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-header {
+  font-size: 1.25rem;
+  color: $header-color;
+  padding: 1rem;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+}
+
+.accordion {
+  flex-grow: 1;
+  overflow-y: auto;
+  .mat-expansion-panel {
+    border: none;
+    box-shadow: none;
+    margin: 0.5rem 0;
+    &:not(:last-child) {
+      border-bottom: 1px solid #eaeaea;
+      margin: 0;
+    }
+  }
+  .mat-expansion-panel-header {
+    padding: 0 1rem;
+    height: 6vh;
+    .mat-panel-title {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+  margin-right: 1vh;
+  color: $header-color;
+}
+

@@ -1,0 +1,84 @@
+@import '../../../../styles.scss';
+
+.centered-title {
+  text-align: center;
+}
+
+.logout-button:hover {
+  background-color: darkblue;
+}
+
+.main {
+  padding-top: 50px;
+  background-color: $background;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right,
+.middle,
+.left {
+  flex: 0 0 auto;
+  text-align: center;
+  margin: 0;
+}
+
+.left {
+  width: 25%;
+  height: 94vh;
+}
+
+.right {
+  flex-basis: 21%;
+  width: 21%;
+  align-self: center;
+}
+
+.middle {
+  flex-basis: 54%;
+  width: 54%;
+  min-width: 54%;
+  height: 94vh;
+}
+
+.middle-right-statistics {
+  width: 80%;
+  height: 94vh;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: start;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  z-index: 1000;
+}
+
+.header-logo {
+  width: 3%;
+  height: auto;
+  margin: 0 1vh;
+}
+
+.header-title {
+  font-family: $font;
+  color: $header-color;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background-color: $header-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+}

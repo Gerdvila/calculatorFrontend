@@ -1,0 +1,32 @@
+<div class="main-content">
+    <div class="card-container">
+      <div class="card-header">Here you can find more details about this request</div>
+      <mat-accordion class="accordion" multi>
+        @if (responseData$ | async; as responseData) {
+          @for(note of responseData.notesTexts; track $index) {
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      <span class="material-symbols-outlined">description</span>
+                      Note - {{ note.createdAt.slice(0,3) | date:'MMM d, yyyy' }}
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div [innerHTML]="note.notesText | formatText"></div>
+            </mat-expansion-panel>
+          }
+        @for(email of responseData.mailTexts; track $index) {
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      <span class="material-symbols-outlined email-icon">email</span>
+                      Email - {{ email.createdAt.slice(0,3) | date:'MMM d, yyyy' }}
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+            <div [innerHTML]="email.mailText | formatText"></div>
+
+          </mat-expansion-panel>
+          }
+        }
+      </mat-accordion>
+    </div>
+  </div>

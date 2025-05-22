@@ -1,0 +1,83 @@
+<div class="cards-and-graph">
+    <div class="cards">
+        <div class="card-container">
+            <div class="card-header">Total Loan Value <span>| Year</span></div>
+            <div class="card-content">
+                <div class="loan-value symbol">
+                    <span class="material-symbols-outlined loan-value-icon">euro</span>
+                </div>
+                <div class="card-text">
+                    @if(totalLoanValue$ | async; as totalLoanValue ){
+                        <p class="value">{{(totalLoanValue.thisYearSum / 1000000).toFixed(2)}} mln. &euro;</p>
+                        @if(totalLoanValue.lastYearSum > 0) {
+                            @if(totalLoanValue.thisYearSum > totalLoanValue.lastYearSum){
+                                <p><span class="increase">{{calculateDifference(totalLoanValue.thisYearSum, totalLoanValue.lastYearSum)}}%</span> increase</p>
+                            } @else {
+                                <p><span class="decrease">{{calculateDifference(totalLoanValue.thisYearSum, totalLoanValue.lastYearSum) * (-1)}}%</span> decrease</p>
+                            }
+                        } @else {
+                            <p>No data for last year</p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card-header">Customers <span>| Month</span></div>
+            <div class="card-content">
+                <div class="customer symbol">
+                    <span class="material-symbols-outlined customer-icon">group</span>
+                </div>
+                <div class="card-text">
+                    @if(numberOfNewCustomers$ | async; as numberOfNewCustomers ){
+                        <p class="value">{{numberOfNewCustomers.thisMonthCount}}</p>
+                        @if(numberOfNewCustomers.previousMonthCount > 0) {
+                            @if(numberOfNewCustomers.thisMonthCount > numberOfNewCustomers.previousMonthCount){
+                                <p><span class="increase">{{calculateDifference(numberOfNewCustomers.thisMonthCount, numberOfNewCustomers.previousMonthCount)}}%</span> increase</p>
+                            } @else {
+                                <p><span class="decrease">{{calculateDifference(numberOfNewCustomers.thisMonthCount, numberOfNewCustomers.previousMonthCount) * (-1)}}%</span> decrease</p>
+                            }
+                        } @else {
+                            <p>No data for last month</p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card-header">High Risk <span> | Month</span></div>
+            <div class="card-content">
+                <div class="high-risk symbol">
+                    <span class="material-symbols-outlined high-risk-icon">error</span>
+                </div>
+                <div class="card-text">
+                    @if(numberOfHighRiskApplications$ | async; as numberOfHighRiskApplications ){
+                        <p class="value">{{numberOfHighRiskApplications.currentMonthCount}}</p>
+                        @if(numberOfHighRiskApplications.lastMonthCount > 0) {
+                            @if(numberOfHighRiskApplications.currentMonthCount > numberOfHighRiskApplications.lastMonthCount){
+                                <p><span class="decrease">{{calculateDifference(numberOfHighRiskApplications.currentMonthCount, numberOfHighRiskApplications.lastMonthCount)}}%</span> increase</p>
+                            } @else {
+                                <p><span class="increase">{{calculateDifference(numberOfHighRiskApplications.currentMonthCount, numberOfHighRiskApplications.lastMonthCount) * (-1)}}%</span> decrease</p>
+                            }
+                        } @else {
+                            <p>No data for last month</p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="graph-container">
+        <div class="card-header chart-header">Monthly applications</div>
+        @if(lineChartOption){
+            <div echarts [options]="lineChartOption" class="line-chart"></div>
+        }
+    </div>
+</div>
+
+<div class="piechart-container">
+    <div class="card-header chart-header">Application status <span class="chart">| Year</span></div>
+    @if(pieChartOption){
+        <div echarts [options]="pieChartOption" class="pie-chart"></div>
+    }
+</div>

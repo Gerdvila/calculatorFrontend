@@ -1,0 +1,80 @@
+@import '../../../../styles.scss';
+
+.main-container {
+  background-color: $background;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-title {
+   color: $header-color;
+   font-family: $font;
+   text-align: center;
+   margin: 1vh;
+ }
+
+h1 {
+  margin-top: 1vh;
+  font-weight: 500;
+}
+
+.login-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-logo {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  img {
+    width: 120px;
+    height: auto;
+  }
+}
+
+.login-container {
+  background-color: $cards-color;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .example-full-width{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  &:hover {
+    background-color: $header-color;
+  }
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.loginSpinner {
+  width: 30px;
+  height: 30px;
+}
+
+

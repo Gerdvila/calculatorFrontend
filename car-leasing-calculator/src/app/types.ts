@@ -97,7 +97,7 @@ export interface PersonalInfoDetails {
 }
 
 export interface Application {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   isOpened: boolean;
@@ -121,7 +121,7 @@ export const enum Status {
 }
 
 export interface NoteRequest {
-  applicationId: number;
+  applicationId: string;
   noteText: string;
 }
 
@@ -140,7 +140,7 @@ export interface MailTextResponse {
 }
 
 export interface MailsAndNotesResponse {
-  applicationId: number;
+  applicationId: string;
   notesTexts: NoteTextResponse[];
   mailTexts: MailTextResponse[];
 }
@@ -196,7 +196,7 @@ export interface GeneralAllFormsResponse {
     monthlyPayment: string;
   };
   personalInformationResponse: {
-    id: number;
+    id: string;
     firstName: string;
     lastName: string;
     email: string;
@@ -210,7 +210,7 @@ export interface GeneralAllFormsResponse {
     languagePref: string;
   };
   leaseResponse: {
-    id: number;
+    id: string;
     make: string;
     model: string;
     modelVariant: string;
@@ -224,7 +224,7 @@ export interface GeneralAllFormsResponse {
     confirmation: boolean;
   };
   statusResponse: {
-    id: number;
+    id: string;
     applicationStatus: Status;
     isOpened: boolean;
     updatedAt: string;
@@ -241,13 +241,13 @@ export interface LoginFormRequest {
 }
 
 export interface MailRequest {
-  applicationId: number;
+  applicationId: string;
   mailSubject: string;
   mailText: string;
   mailRecipient: string;
 }
 export interface MailResponse {
-  applicationId: number;
+  applicationId: string;
   mailSubject: string;
   mailText: string;
   mailRecipient: string;
@@ -293,4 +293,15 @@ export interface ApplicationMonthlyCountResponse {
 export interface HighRiskMonthlyCountResponse {
   currentMonthCount: number,
   lastMonthCount: number
+}
+
+export interface MailTemplateResponse{
+  mailContent: string
+}
+
+export const enum MailTemplateType {
+  REJECTED = "REJECTED",
+  ACCEPTED = "ACCEPTED",
+  PENDING = "PENDING",
+  CANCELLED = "CANCELLED"
 }

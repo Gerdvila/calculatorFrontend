@@ -1,0 +1,21 @@
+<div class="card-container">
+  <div class="notes-container">
+    <textarea
+      matInput
+      [(ngModel)]="noteText"
+      class="textarea-notes"
+      rows="8"
+      placeholder="Type your note here..."
+    ></textarea>
+
+    <button
+      mat-stroked-button
+      color="warn"
+      class="save-button"
+      (click)="saveNote()"
+    >
+      Save
+    </button>
+  </div>
+</div>
+

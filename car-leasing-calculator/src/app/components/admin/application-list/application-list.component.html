@@ -1,0 +1,57 @@
+<mat-card>
+  <div class="search-sort smallerFormField">
+    <form [formGroup]="sortForm">
+      <mat-form-field appearance="outline" subscriptSizing="dynamic">
+        <input
+          matInput
+          placeholder="Search"
+          formControlName="searchQuery"
+          (keyup)="submitSortAndSearch()"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline" subscriptSizing="dynamic">
+        <mat-select
+          formControlName="selectedStatus"
+          multiple
+          placeholder="Sort by:"
+          (selectionChange)="submitSortAndSearch()"
+        >
+          <mat-option value="NEW">New</mat-option>
+          <mat-option value="PENDING">Pending</mat-option>
+          <mat-option value="ACCEPTED">Accepted</mat-option>
+          <mat-option value="REJECTED">Rejected</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-card-content class="list">
+    <cdk-virtual-scroll-viewport itemSize="50" class="app-list-view" (scrolledIndexChange)="checkIfNearEndOfList($event)">
+      @if(listResponse$ | async; as listResponse) {
+        <ng-container *cdkVirtualFor="let res of listResponse$ | async">
+          <li
+            class="opened-{{ res.isOpened }} {{ res.status }} {{selectedId === res.id ? 'selected' : ''}}"
+            (click)="openSelected(res.id, res)"
+          >
+            <div>
+              <h3>{{ res.firstName + " " + res.lastName }}</h3>
+              <h4>ID: {{ res.id }}</h4>
+            </div>
+            <div class="date-icon">
+              <h5>{{ formatDate(res.createdAt.slice(0,3)) }}</h5>
+              @if(res.isHighRisk){
+                <span class="material-symbols-outlined high-risk" matTooltip="Application is high-risk">error</span>
+              }
+              @if(res.status === "ACCEPTED"){
+                <span class="material-symbols-outlined" matTooltip="Application accepted">done</span>
+              } @if(res.status === "PENDING"){
+              <span class="material-symbols-outlined" matTooltip="Application pending">schedule</span>
+            }
+            </div>
+          </li>
+          <mat-divider></mat-divider>
+        </ng-container>
+      }
+    </cdk-virtual-scroll-viewport>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,117 @@
+@use "@angular/material" as mat;
+@import '../../../../styles.scss';
+
+mat-card {
+
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+
+    .search-sort {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        width: 60px;
+        height: 50px;
+        margin: 10px 0 10px 10px;
+    }
+
+    .smallerFormField {
+        margin: 3vh 3vh 0 3vh;
+        @include mat.form-field-density(-5);
+    }
+
+    mat-form-field {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+
+    width: 100%;
+    height: 97%;
+
+    .list {
+        text-align: left;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+
+        .app-list-view {
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+            background-color: $cards-color;
+
+
+            li {
+                // ! DO NOT reduce height below 70 px as this may mess up the scroll index and auto pagination!
+                // Feel free to increase height a bit if necessary
+                height: 73px;
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 10px;
+                border-radius: 2px;
+                border-left: 3px solid transparent;
+
+                h3 {
+                    margin: 0;
+                }
+
+                h4 {
+                    margin-bottom: 0;
+                  font-size: 0.70rem;
+                  word-break: break-all
+                }
+
+                &.opened-false h3,
+                &.opened-false h4,
+                &.opened-false h5 {
+                    font-weight: bold;
+                }
+
+                &.rejected {
+                    opacity: 0.6;
+                    background-color: rgb(224, 224, 224);
+                    cursor: default;
+                }
+
+                .date-icon {
+                    text-align: right;
+                }
+
+                &.selected {
+                    background-color: #e3e4fa;
+                    cursor: pointer;
+                    border-left: 3px solid #0d6efd
+                }
+            }
+
+            li:hover {
+                background-color: #e3e4fa;
+                cursor: pointer;
+                border-left: 3px solid #0d6efd;
+            }
+        }
+    }
+
+    li.REJECTED {
+        opacity: 0.6;
+        background-color: rgb(224, 224, 224);
+        cursor: default;
+    }
+
+    .high-risk {
+        color: #f44336;
+        font-size: 24px;
+    }
+
+    li .date-icon {
+        text-align: right;
+    }
+}
+
+.cdk-virtual-scroll-viewport {
+    scrollbar-color: #aab7cf transparent;
+}

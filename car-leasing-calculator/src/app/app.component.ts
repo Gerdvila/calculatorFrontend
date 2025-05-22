@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { MainContainerComponent } from './components/user/home-page/main-container.component';
 import { TranslationService } from "./services/translation.service";
 import { RouterOutlet } from '@angular/router';
+import {provideEcharts} from "ngx-echarts";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [
+      provideEcharts()
   ]
 
 })

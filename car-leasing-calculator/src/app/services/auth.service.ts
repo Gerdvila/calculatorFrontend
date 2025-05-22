@@ -36,9 +36,9 @@ export class AuthService {
   }
 
   postLogin(loginFields: FormGroup): Observable<any> {
-    return this.client.post<LoginFormRequest>(`${environment.API_URL}/user/api/v1/auth/authenticate`,
+    return this.client.post<LoginFormRequest>(`${environment.API_URL}/auth/login`,
       {
-        "username": loginFields.get('username')?.value,
+        "login": loginFields.get('username')?.value,
         "password": loginFields.get('password')?.value
       }).pipe(
         catchError((error) => throwError(() => error))

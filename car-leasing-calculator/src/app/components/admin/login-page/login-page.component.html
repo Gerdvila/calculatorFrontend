@@ -1,0 +1,52 @@
+<div class="main-container">
+  <div class="login-logo-container">
+    <div class="login-container">
+      <div class="login-title">
+        <h1>Login to Your Account</h1>
+        <p>Enter your username & password to login</p>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="Enter your name" name="username"
+                   formControlName="username">
+            @if (username?.invalid && username?.touched && !loginFailed) {
+            <mat-error>Please fill this field</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter your password" value="" name="password"
+                   [type]="passwordHidden ? 'password' : 'text'"
+                   formControlName="password">
+            <mat-icon matSuffix
+                      (click)="passwordHidden = !passwordHidden">{{ passwordHidden ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+
+            @if (password?.invalid && password?.touched && !loginFailed){
+            <mat-error>Please fill this field</mat-error>
+            }
+          </mat-form-field>
+          @if (loginFailed && !isLoading){
+          <mat-error>Invalid username or password</mat-error>
+          }
+
+          <div class="spinnerContainer">
+            @if (isLoading) {
+            <mat-progress-spinner class="loginSpinner" [diameter]="30" class="spinner"
+                                  mode="indeterminate"></mat-progress-spinner>
+            }
+          </div>
+          <button class="loginButton" [disabled]="!loginForm.valid" mat-raised-button color="primary" type="submit">
+            Submit
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

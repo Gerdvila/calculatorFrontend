@@ -1,0 +1,60 @@
+@import '../../../../styles.scss';
+
+.card-container {
+  background-color: $cards-color;
+  border-radius: 0.3rem;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  font-family: $font;
+  margin: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  color: black;
+}
+
+.email-dropdown-template {
+  width: 100%;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.email-content-box {
+  width: 96%;
+  height: 23vh;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.3rem;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+  font-family: $font;
+}
+
+.email-actions {
+  align-self: center;
+  padding: 0.5rem;
+}
+
+.email-content-box {
+  overflow-y: scroll;
+}
+
+.email-content-box::-webkit-scrollbar {
+  width: 12px;
+}
+
+.email-content-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.email-content-box::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 6px;
+  border: 3px solid transparent;
+}

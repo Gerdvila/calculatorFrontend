@@ -1,0 +1,41 @@
+@import '../../../../styles.scss';
+
+.card-container {
+  overflow: hidden;
+  font-family: $font;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  color: $text-color;
+}
+
+.custom-tab-group {
+  .mat-tab-label {
+    flex-grow: 1;
+    max-width: none;
+    color: $text-color;
+    margin-right: 8px;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    &:hover {
+      background-color: darken($cards-color, 5%);
+    }
+    &.mat-tab-label-active {
+      color: $header-color;
+      background-color: $cards-color;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .mat-ink-bar {
+    background-color: transparent;
+  }
+}
+
+

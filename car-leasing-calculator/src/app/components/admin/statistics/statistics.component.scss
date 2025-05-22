@@ -1,0 +1,150 @@
+@import '../../../../styles.scss';
+
+:host {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.graph-container,
+.piechart-container,
+.card-container {
+    background-color: $cards-color;
+    border-radius: 0.3rem;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.cards-and-graph {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 1rem;
+}
+
+.piechart-container {
+    width: 30%;
+    margin: 1rem 1rem 1rem 0;
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.card-container {
+    font-family: $font;
+    min-width: 30%;
+    text-align: left;
+}
+
+.card-header {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $header-color;
+    padding-bottom: 0.5rem;
+    font-family: $font;
+}
+
+.graph-container .chart-header {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.chart-header {
+    font-size: 1.25rem;
+}
+
+.card-header span {
+    color: lightgray;
+    font-weight: 200;
+    font-size: 0.9rem;
+}
+
+.card-header span.chart {
+    font-size: 1rem;
+}
+
+.pie-chart {
+    height: 40%;
+}
+
+.line-chart {
+    height: 300px;
+}
+
+.card-content {
+    display: flex;
+}
+
+.loan-value-icon,
+.customer-icon,
+.high-risk-icon {
+    font-size: 34px;
+}
+
+.symbol {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loan-value.symbol {
+    background-color: #2eca6a32;
+    padding-right: 5px;
+}
+
+.loan-value-icon {
+    color: $green;
+}
+
+.customer.symbol {
+    background-color: #facf0f32;
+}
+
+.customer-icon {
+    color: #facf0f;
+}
+
+.high-risk.symbol {
+    background-color: #f4433632;
+}
+
+.high-risk-icon {
+    color: #f44336;
+}
+
+.card-text {
+    margin-left: 1.5rem;
+}
+
+p.value {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: $header-color;
+}
+
+.card-text span.increase {
+    color: $green;
+    font-weight: 800;
+}
+
+.card-text span.decrease {
+    color: #f44336;
+    font-weight: 800;
+}
+
+.chart-placeholder {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}

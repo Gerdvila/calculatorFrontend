@@ -1,0 +1,33 @@
+<div class="card-container">
+  <div class="card-header">Client data</div>
+  <div class="card-content">
+    @if(responseData$ | async; as res){
+        <p><span class="label">Full Name:</span> {{res.personalInformationResponse.firstName + " " + res.personalInformationResponse.lastName}}</p>
+        <p><span class="label">Citizenship:</span> {{res.personalInformationResponse.citizenship}} <img src="../../../../assets/{{res.personalInformationResponse.languagePref}}.png" alt="language-preference" class="lang-pref" matTooltip="Preferred language"></p>
+        <p><span class="label">Personal ID:</span> {{res.personalInformationResponse.pid}}</p>
+        <p><span class="label">Age:</span> {{calulateAge(res.personalInformationResponse.dateOfBirth.slice(0,3))}} years</p>
+        <p><span class="label">Phone No.:</span> {{res.personalInformationResponse.phoneNumber}}</p>
+        <p><span class="label">E-mail:</span> {{res.personalInformationResponse.email}}</p>
+        <p><span class="label">Marital Status:</span> {{res.personalInformationResponse.maritalStatus}}</p>
+        <p><span class="label">Number of Children:</span> {{res.personalInformationResponse.numberOfChildren}}</p>
+        <p><span class="label">Monthly Net Income:</span> {{res.personalInformationResponse.monthlyIncome}} €</p>
+    }
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card-header">Lease data</div>
+  <div class="card-content">
+        @if(responseData$ | async; as res){
+        <p><span class="label">Car:</span> {{res.leaseResponse.make}} {{res.leaseResponse.model}} ({{res.leaseResponse.year.trim()}}) @if(res.ratesResponse.isEcoFriendly) {<span class="material-symbols-outlined" matTooltip="Eco-friendly car">eco</span>}</p>
+            <p><span class="label">Car model variant:</span> {{res.leaseResponse.modelVariant}}</p>
+            <p><span class="label">Fuel type, engine:</span> {{res.leaseResponse.fuelType}} | {{res.leaseResponse.engineSize}} L | {{res.leaseResponse.enginePower}} hp</p>
+            <p><span class="label">Car offer url: </span><a href="{{res.leaseResponse.url}}" target="_blank">visit website</a></p>
+            <p><span class="label">Car value:</span> {{res.ratesResponse.carValue}} €</p>
+            <p><span class="label">Period:</span> {{res.ratesResponse.period}} months</p>
+            <p><span class="label">Residual value:</span> {{residualToEur(res.ratesResponse.residualValuePercentage, res.ratesResponse.carValue)}}€</p>
+            <p><span class="label">Down payment:</span> {{res.ratesResponse.downPayment}} €</p>
+            <p><span class="label">Monthly payment:</span> {{res.ratesResponse.monthlyPayment}} €/month</p>
+        }
+  </div>
+</div>

@@ -1,0 +1,15 @@
+@if(responseObject$ | async; as response){
+<div class="card-container top">
+  <div class="card-content">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" class="custom-tab-group">
+      <mat-tab label="Mail">
+        <app-mail-tab [dataForEmailTab]="response" [applicationId]="selectedId()"/>
+      </mat-tab>
+      <mat-tab label="Notes">
+        <app-notes-tab [applicationId]="selectedId()" />
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<app-notes [applicationId]="selectedId()" />
+}
